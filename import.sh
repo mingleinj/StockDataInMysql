@@ -3,7 +3,7 @@
 #The downloaded CSV files will then be imported into MySQL database using mysqlimport tool
 	 
 	#Enter your database parameters here
-	DB='test'
+	DB='stock'
 	HOST='localhost'
 	USER='root'
 	PASS='M1ng@2011'
@@ -11,7 +11,7 @@
 	 
 	DB_PARAMS="-u ${USER} -h ${HOST} -p${PASS} ${DB}"
 	CREATE="DROP TABLE IF EXISTS Pricehistory; CREATE TABLE Pricehistory (id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT, ticker VARCHAR(20), day DATE,  open DECIMAL(8,3), high DECIMAL(8,3), low DECIMAL(8,3), close DECIMAL(8,3), volume BIGINT, adj_close DECIMAL(8,3))"
-	URL='http://ichart.finance.yahoo.com/table.csv?s=_SYMBOL_&d=1&e=22&f=2013&g=d&a=2&b=13&c=1986&ignore=.csv'
+	URL='http://ichart.finance.yahoo.com/table.csv?s=_SYMBOL_&d=1&e=29&f=2013&g=d&a=2&b=13&c=1986&ignore=.csv'
 	
 	mysql -e "${CREATE//_SYMBOL_/$SYMBOL}" ${DB_PARAMS}
 	 
