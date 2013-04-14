@@ -14,73 +14,73 @@
 	
 	mysql -e "${CREATE//_SYMBOL_/$SYMBOL}" ${DB_PARAMS}
 	 
-	URL='http://biz.yahoo.com/p/csv/s_mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/s_conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_sector.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_sector.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
 	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow)"  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/1mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/1conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind1.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind1.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
 	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 1 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/3mktd.csv'
-	
-	curl -o "${TAB_PREFIX}_ind3.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
-	
-	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind3.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 3 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
-	
-	URL='http://biz.yahoo.com/p/csv/2mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/2conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind2.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind2.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 9 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	
+	URL='http://biz.yahoo.com/p/csv/3conameu.csv'
+	
+	curl -o "${TAB_PREFIX}_ind3.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
+	
+	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind3.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
 	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 2 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/4mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/4conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind4.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind4.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 4 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 3 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/5mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/5conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind5.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind5.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 5 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 6 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/6mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/6conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind6.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind6.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 6 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 5 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/7mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/7conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind7.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind7.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
 	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 7 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/8mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/8conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind8.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind8.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 8 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 4 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	
-	URL='http://biz.yahoo.com/p/csv/9mktd.csv'
+	URL='http://biz.yahoo.com/p/csv/9conameu.csv'
 	
 	curl -o "${TAB_PREFIX}_ind9.csv" -L -q "${URL/_SYMBOL_/$SYMBOL}"
 	
 	mysql -e "LOAD DATA LOCAL INFILE '"${TAB_PREFIX}_ind9.csv"' INTO TABLE KeyBenchmark FIELDS TERMINATED BY ','  ENCLOSED BY '\"'
-	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 9 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
+	   LINES TERMINATED BY '\n'  IGNORE 1 LINES  (description , OneDayPriceChange, MarketCap, pe, roe,  DivYield, LongDebtToEquity, PriceBookValue, NetProfitMargin, PriceToFreeCashFlow) set parent_ID= 8 "  --local-infile -u ${USER} -h ${HOST} -p${PASS} -D ${DB};
 	

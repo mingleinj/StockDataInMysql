@@ -11,7 +11,7 @@
 	 
 	DB_PARAMS="-u ${USER} -h ${HOST} -p${PASS} ${DB}"
 	CREATE="DROP TABLE IF EXISTS Pricehistory; CREATE TABLE Pricehistory (id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT, ticker VARCHAR(20), day DATE,  open DECIMAL(8,3), high DECIMAL(8,3), low DECIMAL(8,3), close DECIMAL(8,3), volume BIGINT, adj_close DECIMAL(8,3))"
-	URL='http://ichart.finance.yahoo.com/table.csv?s=_SYMBOL_&d=1&e=29&f=2013&g=d&a=2&b=13&c=1986&ignore=.csv'
+	URL='http://ichart.finance.yahoo.com/table.csv?s=_SYMBOL_&d=3&e=15&f=2013&g=d&a=1&b=3&c=2011&ignore=.csv'
 	
 	mysql -e "${CREATE//_SYMBOL_/$SYMBOL}" ${DB_PARAMS}
 	 
